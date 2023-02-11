@@ -1,27 +1,59 @@
 /** @format */
-
 let arr = [
-  { id: 1, name: "john", age: "18", marks: 80 },
-  { id: 2, name: "jack", age: "20", marks: 85 },
-  { id: 3, name: "karen", age: "19", marks: 35 },
+  { id: 1, name: "john", age: "18", profession: "developer" },
+  { id: 2, name: "jack", age: "20", profession: "developer" },
+  { id: 3, name: "karen", age: "19", profession: "admin" },
 ];
-
-function PrintStudentswithMap() {
-  //Write your code here , just console.log
+// <-------------map functon----->
+function PrintDeveloperswithMap() {
+  //Write your code here
+  arr.map((employee) => {
+    if (employee.profession == "developer") {
+      console.log(employee);
+    }
+  });
 }
+// <---------------ForEach fuction---------->
+function PrintDeveloperbyForEach() {
+  //Write your code here
+  arr.forEach(printViaForEach); //each element is stored printViaForEach
+  function printViaForEach(arrayItem) {
+    if (arrayItem.profession == "developer") {
+      console.log(arrayItem);
+    }
 
-function PrintStudentsbyForEach() {
-  //Write your code here , just console.log
+  }
 }
-
+// <----------addData function-------
 function addData() {
-  //Write your code here, just console.log
-}
+  //Write your code here
+  let newObj = { id: 4, name: "susan", age: "20", profession: "intern" }
+  arr.push(newObj);
+  console.log(arr);
 
-function removeFailedStudent() {
-  //Write your code here, just console.log
-}
 
+
+
+}
+// <----------removeAdmin  function----->
+function removeAdmin() {
+  //Write your code here
+  let filter_arr = arr.filter(function (val) {
+    //callback - The test function to execute on each array element; 
+    if (val.profession !== "admin") {
+      return val;
+    }
+  });
+  console.log(filter_arr);
+}
+// <------------concatenateArray function------>
 function concatenateArray() {
-  //Write your code here, just console.log
+  //Write your code here
+  let arr2 = [
+    { id: 4, name: "nitin", age: "21", profession: "SDE" },
+    { id: 5, name: "raj", age: "22", profession: "INSTRUCTER" },
+    { id: 6, name: "prabhat", age: "24", profession: "MENTOR" },
+  ];
+  let concatArray = arr.concat(arr2);
+  console.log(concatArray);
 }
